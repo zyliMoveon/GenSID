@@ -1,5 +1,5 @@
-# GenSID: A versatile generative modelling framework for automated and interpretable discovery of imaging biomarkers
-This is a code implementation of "**A versatile generative modelling framework for automated and interpretable discovery of imaging biomarkers**"
+# GenSID: A versatile generative framework for systematic imaging biomarker discovery
+This is a code implementation of "**A versatile generative framework for systematic imaging biomarker discovery**"
 
 ## Introduction
 
