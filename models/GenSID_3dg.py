@@ -6,9 +6,9 @@ from torch.optim import Adam
 import torch.nn.functional as F
 from kornia.filters import filter2d, filter3d # added filter3d for blurring
 
-from utils.diff_augment import DiffAugment
-from utils.tools import *
-from utils.attention import MultiHeadCrossAttention
+from ..utils.diff_augment_3dg import DiffAugment
+from ..utils.tools_3dg import *
+from ..utils.attention import MultiHeadCrossAttention
 
 class PermuteToFrom(nn.Module):
     def __init__(self, fn):

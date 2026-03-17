@@ -4,7 +4,7 @@ from einops import rearrange, repeat
 from monai.losses import PerceptualLoss, ssim_loss
 import sys
 sys.path.append('../..')
-from utils.ssim import MS_SSIM
+from ssim import MS_SSIM
 
 
 #losses

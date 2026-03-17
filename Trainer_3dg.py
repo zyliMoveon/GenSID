@@ -1,3 +1,4 @@
+import os
 import json
 from tqdm import tqdm
 from shutil import rmtree
@@ -12,8 +13,8 @@ from torch.cuda.amp import autocast, GradScaler
 assert torch.cuda.is_available(), 'You need to have an Nvidia GPU with CUDA installed.'
 
 from utils.MRIDataset import MRIDataset
-from utils.tools import *
-from utils.loss import *
+from utils.tools_3dg import *
+from utils.loss_3dg import *
 from models.GenSID_3dg import *
 from models.Resnet_3dg import resnet18, resnet50
 from monai.losses.ssim_loss import SSIMLoss
@@ -166,7 +167,7 @@ class Trainer():
         empty = torch.nn.Sequential()  # MODIFIED
         self.classifier.fc1 = empty  # MODIFIED
         self.classifier.fc3 = empty  # MODIFIED
-        cls_path = '/data/zyli/models/Project2/Classifiers/ADNC_data/cls_128_0-1/'  # MODIFIED
+        cls_path = '/your/pretrained/classifier/path/'  # MODIFIED
         self.classifier.load_state_dict(torch.load(cls_path + '4_80_net.pth'), strict=False)  # MODIFIED
         self.classifier = self.classifier.cuda(rank)  # MODIFIED
         self.classifier.eval()  # MODIFIED
